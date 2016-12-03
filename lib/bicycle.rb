@@ -62,3 +62,4 @@ class MountainBike < Bicycle
     '2.1'
   end
 end
+
