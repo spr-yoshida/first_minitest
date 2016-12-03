@@ -1,6 +1,11 @@
 # minitestを使ってみる
 
 ## minitestのインストール
+Bundlerでインストールする。
+```
+$ bundle init
+```
+Gemfileに`gem "minitest"`を記載し、インストール。
 ```
 $ bundle install --path=vendor/bundle --binstubs=vendor/bin
 ```
