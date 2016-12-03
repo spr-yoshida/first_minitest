@@ -1,5 +1,4 @@
 require 'bundler/setup'
-require 'minitest/unit'
 require 'minitest/autorun'
 
 require_relative 'test_helper'
