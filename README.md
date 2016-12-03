@@ -7,23 +7,18 @@ $ bundle install --path=vendor/bundle --binstubs=vendor/bin
 
 ## minitestの実行
 ```
-$ ruby test_foo.rb 
-Warning: you should require 'minitest/autorun' instead.
-Warning: or add 'gem "minitest"' before 'require "minitest/autorun"'
-From:
-  test_foo.rb:2:in `require'
-  test_foo.rb:2:in `<main>'
-MiniTest::Unit::TestCase is now Minitest::Test. From test_foo.rb:7:in `<main>'
-Run options: --seed 7987
+$ ruby ./test/test_foo.rb 
+MiniTest::Unit::TestCase is now Minitest::Test. From ./test/test_foo.rb:7:in `<main>'
+Run options: --seed 38356
 
 # Running:
 
-F.
+.F
 
-Finished in 0.002844s, 703.3041 runs/s, 703.3041 assertions/s.
+Finished in 0.001806s, 1107.5792 runs/s, 1107.5792 assertions/s.
 
   1) Failure:
-TestFoo#test_bar [test_foo.rb:21]:
+TestFoo#test_bar [./test/test_foo.rb:21]:
 Expected: "bar"
   Actual: "foo"
 
