@@ -2,7 +2,8 @@ require 'bundler/setup'
 require 'minitest/unit'
 require 'minitest/autorun'
 
-require './foo'
+require_relative 'test_helper'
+require 'foo'
 
 class TestFoo < MiniTest::Unit::TestCase
   def setup
