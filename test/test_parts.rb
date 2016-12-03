@@ -4,13 +4,17 @@ require 'minitest/autorun'
 require_relative 'test_helper'
 require 'parts'
 
-class WheelTest < MiniTest::Unit::TestCase
-  def setup
-    @wheel = Wheel.new(26,1.5)
-  end
-
+module DiameterizableInterfaceTest
   def test_implements_the_diameterizable_interface
-    assert_respond_to(@wheel,:diameter)
+    assert_respond_to(@object,:width)
+  end
+end
+
+class WheelTest < MiniTest::Unit::TestCase
+  include DiameterizableInterfaceTest
+
+  def setup
+    @wheel = @object = Wheel.new(26,1.5)
   end
 
   def test_calculates_diameter
@@ -18,14 +22,22 @@ class WheelTest < MiniTest::Unit::TestCase
 
     assert_in_delta(
       29,
-      wheel.diameter,
+      wheel.width,
       0.01)
   end
 end
 
 class DiameterDouble
-  def diameter
+  def width
     10
+  end
+end
+
+class DiameterDoubleTest < MiniTest::Unit::TestCase
+  include DiameterizableInterfaceTest
+
+  def setup
+    @object = DiameterDouble.new
   end
 end
 

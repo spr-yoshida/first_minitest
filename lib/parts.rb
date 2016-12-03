@@ -5,7 +5,7 @@ class Wheel
     @tire = tire
   end
 
-  def diameter
+  def width
     rim + (tire * 2)
   end
 end
@@ -34,7 +34,7 @@ class Gear
   end
 
   def gear_inches
-    ratio * wheel.diameter
+    ratio * wheel.width
   end
 
   def ratio
